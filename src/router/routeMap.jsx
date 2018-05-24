@@ -8,7 +8,7 @@ import Todo from './../views/todo/index'
 class RouteMap extends React.Component{
     render(){
         return(
-            <Router onUpdata={this.updataHander.bind(this)}>
+            <Router history={this.props.history} onUpdata={this.updataHander.bind(this)}>
                 <Route path='/' component={Homer}>
                     <IndexRoute component={App}/>
                     <Route path='todo' component={Todo}/>

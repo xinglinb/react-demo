@@ -12,9 +12,9 @@ class Todo extends Component {
 	}
 	render(){
 		return (
-			<div>
+			<div className="input">
 				<Input 
-					submit={this.addData.bind(this)}
+					submit={this.addData.bind(this)} 
 				/>
 				<List 
 					data={this.state.data} 
@@ -32,7 +32,7 @@ class Todo extends Component {
 	addData(value){
 		let data = this.state.data
 		data.unshift({
-			id: (data.length > 0 ? data[0].id : -1)+ 1,
+			id: (data.length > 0 ? data[0].id : 0)+ 1,
 			index: value
 		})
 		this.setState({

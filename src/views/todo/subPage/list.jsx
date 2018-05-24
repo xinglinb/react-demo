@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-
-class List extends Component {
+import { List } from 'antd';
+class ListX extends Component {
     constructor(props,context){
         super(props,context);
         this.state = {
@@ -9,22 +9,22 @@ class List extends Component {
     }
     render(){
         return (
-            <ul>
-                {
-                    this.props.data.map((item,index)=>{
-                        return (
-                            <li 
-                            onClick={this.props.clearThis.bind(this,item.id)} 
+            <div>
+                <List
+                    bordered
+                    dataSource={this.props.data}
+                    renderItem={item => (
+                        <List.Item 
                             key={item.id}
-                            >
-                                {item.index}
-                            </li>
-                        )
-                    })
-                }
-            </ul>
+                            onClick={this.props.clearThis.bind(this,item.id)}
+                        >
+                            {item.id}、{item.index}
+                        </List.Item>
+                    )}
+                />
+            </div>
         );
     }
 }
 
-export default List
+export default ListX

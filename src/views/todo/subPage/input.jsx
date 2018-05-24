@@ -1,6 +1,6 @@
 import React from 'react'
-import './../index.less'
-class Input extends React.Component {
+import { Input } from 'antd';
+class InputX extends React.Component {
     constructor(props,context){
         super(props,context);
         this.state = {
@@ -9,13 +9,16 @@ class Input extends React.Component {
     }
     render(){
         return(
-            <input 
-            className='input'
-            type="text" 
-            value={this.state.value}
-            onChange = {this.changeValue.bind(this)}
-            onKeyUp={this.keyUpHandler.bind(this)}
-            />
+            <div>
+                <Input.Search 
+                size="large"
+                type="text" 
+                value={this.state.value}
+                onChange = {this.changeValue.bind(this)}
+                onKeyUp={this.keyUpHandler.bind(this)}
+                placeholder="输入"
+                />
+            </div>
         )
     }
     changeValue(e){
@@ -33,4 +36,4 @@ class Input extends React.Component {
         }
     }
 }
-export default Input
+export default InputX

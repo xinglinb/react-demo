@@ -4,8 +4,8 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import RouteMap from './router/routeMap'
-import {hashHistory} from 'react-router'
+import { browserHistory } from 'react-router'
 
 
-ReactDOM.render(<RouteMap history={hashHistory}/>, document.getElementById('root'));
+ReactDOM.render(<RouteMap history={browserHistory}/>, document.getElementById('root'));
 registerServiceWorker();
