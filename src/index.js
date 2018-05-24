@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './views/app/App.jsx';
 import registerServiceWorker from './registerServiceWorker';
-import Todo from './views/todo/index.jsx'
+
+import RouteMap from './router/routeMap'
+import {hashHistory} from 'react-router'
 
 
-ReactDOM.render(<Todo />, document.getElementById('root'));
+ReactDOM.render(<RouteMap history={hashHistory}/>, document.getElementById('root'));
 registerServiceWorker();
